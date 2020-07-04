@@ -1,11 +1,16 @@
-// eslint-disable-next-line no-unused-vars
 import { AuthTypes, IAuthActions, IAuthState } from './types'
 
 export type IAuthStateT = IAuthState
 
 const initialState: IAuthState = {
   authToken: '',
-  email: '',
+  user: {
+    _id: '',
+    email: '',
+    integrations: [],
+    createdAt: '',
+    updatedAt: ''
+  },
   hasDone: false,
   isLoading: false,
   hasError: false,
@@ -22,7 +27,7 @@ const actionMap = {
   [AuthTypes.LOGIN_SUCCESS]: (state: IAuthState, action: IAuthActions) => ({
     ...state,
     authToken: action.payload.authToken,
-    email: action.payload.email,
+    user: action.payload.user,
     hasDone: false,
     isLoading: false,
     hasError: false,

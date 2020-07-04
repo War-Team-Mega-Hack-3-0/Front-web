@@ -1,4 +1,5 @@
 import { IBaseInitialState } from '../baseInitialState'
+import { IData } from '../../services/api/auth'
 
 export const AuthTypes = {
   LOGIN_REQUEST: '[auth]LOGIN_REQUEST',
@@ -9,7 +10,7 @@ export const AuthTypes = {
 
 export interface IAuthState extends IBaseInitialState {
   readonly authToken: string
-  readonly email: string
+  readonly user: IData
 }
 
 export interface IAuthActions {

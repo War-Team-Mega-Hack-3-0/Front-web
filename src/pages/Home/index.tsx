@@ -1,5 +1,5 @@
 import React from 'react'
-// import styled from 'styled-components'
+// import styled fro m 'styled-components'
 
 export const Home: React.FC = () => (
   <>

@@ -1,16 +1,21 @@
-import { AuthTypes } from './types'
+import { AuthTypes, IAuthState } from './types'
+
+interface ILoginRequestParams {
+  email: string
+  password: string
+}
 
 export const AuthActions = {
-  loginRequest(email: string, password: string) {
+  loginRequest(data: ILoginRequestParams) {
     return {
       type: AuthTypes.LOGIN_REQUEST,
-      payload: { email, password }
+      payload: data
     }
   },
-  loginSuccess(authToken: string, email: string) {
+  loginSuccess({ authToken, user }: IAuthState) {
     return {
       type: AuthTypes.LOGIN_SUCCESS,
-      payload: { authToken, email }
+      payload: { authToken, user }
     }
   },
   loginFailure(errorMsg: string) {
