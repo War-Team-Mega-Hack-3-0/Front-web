@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 
-import { LogoSvg } from '../../assets/images'
+import { LogoSvg, icClosedEyes, icOpenedEyes } from '../../assets/images'
 import {
   loginText,
   EmailText,
@@ -17,16 +17,33 @@ import {
   Logo,
   Title,
   Input,
+  ContainerToAddIconInInput,
   SpaceBetweenInputs,
   SpaceAfterInputs,
   ContainerOptionsLogin,
   ContainerButton,
   Button,
-  TextCenter
+  TextCenter,
+  TransparentButton
 } from './styles'
 
+interface ITypeAndIconInputPassword {
+  type: 'text' | 'password'
+  icon: string | any
+}
+interface IChangeTypeInput {
+  text: ITypeAndIconInputPassword
+  password: ITypeAndIconInputPassword
+}
+
 export const Login: React.FC = () => {
+  const changeTypeInput: IChangeTypeInput = {
+    text: { type: 'password', icon: icClosedEyes },
+    password: { type: 'text', icon: icOpenedEyes }
+  }
+
   const [formData, setFormData] = useState({ email: '', password: '' })
+  const [typeInputPassword, setTypeInputPassword] = useState<ITypeAndIconInputPassword>(changeTypeInput.text)
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
@@ -42,10 +59,16 @@ export const Login: React.FC = () => {
     return !(formData.email && formData.password)
   }
 
+  function hideUnhiddenPassword(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    event.preventDefault()
+    const changedValues = changeTypeInput[typeInputPassword.type]
+    setTypeInputPassword(changedValues)
+  }
+
   return (
     <Container>
       <ContainerLogo>
-        <Logo src={LogoSvg} alt="Logo da decision" />
+        <Logo src={LogoSvg} alt="Logo da decision" title="Logo da decision" />
       </ContainerLogo>
 
       <Title>{loginText}</Title>
@@ -58,18 +81,35 @@ export const Login: React.FC = () => {
           onChange={handleChangeForm}
           name="email"
           id="email"
+          minLength={5}
+          maxLength={100}
+          title="Digite seu email"
         />
 
         <SpaceBetweenInputs />
 
-        <Input
-          placeholder={passwordText}
-          value={formData.password}
-          onChange={handleChangeForm}
-          type="password"
-          name="password"
-          id="password"
-        />
+        <ContainerToAddIconInInput>
+          <Input
+            placeholder={passwordText}
+            value={formData.password}
+            onChange={handleChangeForm}
+            type={typeInputPassword.type}
+            name="password"
+            id="password"
+            minLength={5}
+            maxLength={20}
+            title="Digite sua senha"
+          />
+
+          <TransparentButton onClick={hideUnhiddenPassword}>
+            <img
+              src={typeInputPassword.icon}
+              alt="icone de olho aberto ou fechado"
+              title="icone de olho aberto ou fechado"
+            />
+          </TransparentButton>
+
+        </ContainerToAddIconInInput>
 
         <SpaceAfterInputs />
 
@@ -84,7 +124,7 @@ export const Login: React.FC = () => {
         <ContainerOptionsLogin>
           <TextCenter>
             <p>{dontHaveAnAccountYetText}</p>
-            <Link to="/">{RegisterText}</Link>
+            <Link to="/register">{RegisterText}</Link>
           </TextCenter>
         </ContainerOptionsLogin>
 

@@ -6,10 +6,9 @@ export const Container = styled.main`
 padding: 1rem;`
 
 export const ContainerLogo = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 3.469375rem 0 3.875rem;
-`
+display: flex;
+justify-content: center;
+margin: 3.469375rem 0 3.875rem;`
 
 export const Logo = styled.img`
 width: 50%;`
@@ -36,6 +35,23 @@ width: 100%;
   opacity: 1;
 }`
 
+export const ContainerToAddIconInInput = styled.div`
+border: 2px solid transparent; 
+align-content: center;
+align-items: center;
+background-color: #FFF;
+border-radius: 0.5rem;
+display: flex;
+padding-right: 1rem;
+input {
+  &:focus {
+    border: 2px solid transparent; 
+  }
+}
+&:focus-within {
+  border: 2px solid ${palletColors.blueGreen}
+}`
+
 export const SpaceBetweenInputs = styled.div`
 margin-top: 1rem;`
 
@@ -51,8 +67,7 @@ a {
 }`
 
 export const ContainerButton = styled.div`
-margin: 3.75rem 0 1.5rem;
-`
+margin: 3.75rem 0 1.5rem;`
 
 export const Button = styled.button`
 border-radius: 0.5rem;
@@ -74,3 +89,7 @@ a {
   color: ${palletColors.blueGreen};
   text-decoration: none;
 }`
+
+export const TransparentButton = styled.button`
+background-color: transparent;
+`
