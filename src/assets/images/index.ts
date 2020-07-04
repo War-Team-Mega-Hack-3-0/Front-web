@@ -1,1 +1,1 @@
-export const manWithCarLandingPage = require('./manWithCar.jpg')
+export const LogoSvg = require('./logo.svg')

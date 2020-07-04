@@ -1,4 +1,10 @@
-export const nameAppText = 'Aplicarro'
+// login screen
+export const loginText = 'Login'
+export const EmailText = 'E-mail'
+export const passwordText = 'Senha'
+export const forgetPasswordText = 'Esqueci a senha'
+export const dontHaveAnAccountYetText = 'Ainda não possui uma conta?'
+export const RegisterText = 'Cadastre-se'
 
 // LandingPage
 export const describeApplicationOne = 'Tudo que seu carro<br />precisa na palma<br />da mão.'

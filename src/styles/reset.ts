@@ -12,6 +12,11 @@ const reset = css`
   font-family: 'Rubik', sans-serif;
 }
 
+body {   
+  background-color: #151725;
+  color: #FFF;
+}
+
 ol, ul {
  list-style: none;
 }
