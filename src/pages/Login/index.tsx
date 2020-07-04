@@ -1,5 +1,8 @@
 import React, { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+
+import { AuthActions } from '../../redux/auth/actions'
 
 import { LogoSvg, icClosedEyes, icOpenedEyes } from '../../assets/images'
 import {
@@ -37,6 +40,8 @@ interface IChangeTypeInput {
 }
 
 export const Login: React.FC = () => {
+  const dispatch = useDispatch()
+
   const changeTypeInput: IChangeTypeInput = {
     text: { type: 'password', icon: icClosedEyes },
     password: { type: 'text', icon: icOpenedEyes }
@@ -47,6 +52,7 @@ export const Login: React.FC = () => {
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
+    dispatch(AuthActions.loginRequest(formData))
   }
 
   function handleChangeForm(event: React.ChangeEvent<HTMLInputElement>) {

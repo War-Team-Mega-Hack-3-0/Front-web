@@ -1,10 +1,10 @@
-import {
-  all
-  // , takeLatest
-} from 'redux-saga/effects'
+import { all, takeLatest } from 'redux-saga/effects'
+
+import { AuthTypes } from '../redux/auth/types'
+import { AuthSagas } from './authSagas'
 
 export function * rootSaga() {
   return yield all([
-    // takeLatest(MovieTypes.MOVIE_RETRIEVE_ALL_BY_NAME_REQUEST, MovieRetrieveAllByNameSaga),
+    takeLatest(AuthTypes.LOGIN_REQUEST, AuthSagas)
   ])
 }

@@ -8,7 +8,7 @@ export const Routes: React.FC = () => (
   <HashRouter>
     <Switch>
       <RouteWrapper path='/' exact component={Login} />
-      <RouteWrapper path='/login' exact component={Home} />
+      <RouteWrapper path='/login' isPrivate exact component={Home} />
     </Switch>
   </HashRouter>
 )

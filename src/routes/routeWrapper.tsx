@@ -1,22 +1,24 @@
 import React from 'react'
-// eslint-disable-next-line no-unused-vars
 import { Route, Redirect, RouteProps } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-interface IProps extends RouteProps{
+import { authState } from '../redux/auth/selectors'
+
+interface IProps extends RouteProps {
   component: React.ComponentType
   isPrivate?: boolean
 }
 
 export const RouteWrapper: React.FC<IProps> = ({ component: Component, isPrivate, ...rest }) => {
-  const signed = ''// useSelector(AuthSignedSelector)
+  const signed = useSelector(authState).authToken
 
   if (!signed && isPrivate) {
-    return <Redirect to="/login" />
+    return <Redirect to="/" />
   }
 
-  if (signed && !isPrivate) {
-    return <Redirect to="/mentores" />
-  }
+  // if (signed && !isPrivate) {
+  //   return <Redirect to="/mentores" />
+  // }
 
   return <Route {...rest} component={Component} />
 }
