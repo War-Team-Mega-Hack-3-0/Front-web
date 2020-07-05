@@ -20,6 +20,9 @@ poderá tomar decisões para aprimorar a<br/>
 sua estratégia de negócio e atingir seus<br/>
 objetivos.`
 
+// home screen
+export const InsideText = 'Descubra mais para alcançar sua meta'
+
 // generics
 export const TextRegister = 'Cadastro'
 export const EmailText = 'E-mail'
