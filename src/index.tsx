@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Reset } from './styles/reset'
+import { Reset } from './styles'
 import { App } from './App'
 import * as serviceWorker from './serviceWorker'
 

@@ -9,15 +9,19 @@ interface IProps extends RouteProps {
   isPrivate?: boolean
 }
 
-export const RouteWrapper: React.FC<IProps> = ({ component: Component, isPrivate, ...rest }) => {
+export const RouteWrapper: React.FC<IProps> = ({
+  component: Component,
+  isPrivate,
+  ...rest
+}) => {
   const signed = useSelector(authState).authToken
 
   if (!signed && isPrivate) {
-    return <Redirect to="/" />
+    return <Redirect to="/login" />
   }
 
   // if (signed && !isPrivate) {
-  //   return <Redirect to="/mentores" />
+  //   return <Redirect to="/" />
   // }
 
   return <Route {...rest} component={Component} />

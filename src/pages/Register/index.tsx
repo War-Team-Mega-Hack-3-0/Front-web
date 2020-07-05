@@ -1,17 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
 
 import { AuthActions } from '../../redux/auth/actions'
 
 import { UseFormController } from '../../customHooks'
 
 import {
-  loginText,
+  yourFullName,
   EmailText,
   passwordText,
-  forgetPasswordText,
-  dontHaveAnAccountYetText,
-  RegisterText
+  continueText,
+  TextRegister
 } from '../../common/strings'
 
 import {
@@ -22,15 +20,8 @@ import {
 } from '../../components'
 import { SpaceBetweenInputs } from '../../styles'
 
-import {
-  SpaceAfterInputs,
-  ContainerOptionsLogin,
-  ContainerButton,
-  TextCenter
-} from './styles'
-
-export const Login: React.FC = () => {
-  const initialState = { email: '', password: '' }
+export const Register: React.FC = () => {
+  const initialState = { fullName: '', email: '', password: '' }
   const {
     formData,
     handleChangeForm,
@@ -38,13 +29,25 @@ export const Login: React.FC = () => {
     checkIfExistVoidValues
   } = UseFormController(
     initialState,
-    AuthActions.loginRequest
+    AuthActions.signUp
   )
 
   return (
-    <ContainerWithLogo title={loginText}>
-
+    <ContainerWithLogo title={TextRegister}>
       <form onSubmit={handleSubmit}>
+        <Input
+          placeholder={yourFullName}
+          value={formData.fullName}
+          onChange={handleChangeForm}
+          name="fullName"
+          id="fullName"
+          minLength={5}
+          maxLength={100}
+          title="Digite seu seu nome completo"
+          required
+        />
+
+        <SpaceBetweenInputs />
 
         <Input
           placeholder={EmailText}
@@ -56,6 +59,7 @@ export const Login: React.FC = () => {
           minLength={5}
           maxLength={100}
           title="Digite seu email"
+          required
         />
 
         <SpaceBetweenInputs />
@@ -71,26 +75,12 @@ export const Login: React.FC = () => {
           title="Digite sua senha"
         />
 
-        <SpaceAfterInputs />
-
-        <ContainerOptionsLogin>
-          <Link to="/forget-password">{forgetPasswordText}</Link>
-        </ContainerOptionsLogin>
-
-        <ContainerButton>
-          <Button disabled={checkIfExistVoidValues}>{loginText}</Button>
-        </ContainerButton>
-
-        <ContainerOptionsLogin>
-          <TextCenter>
-            <p>{dontHaveAnAccountYetText}</p>
-            <Link to="/sign-up">{RegisterText}</Link>
-          </TextCenter>
-        </ContainerOptionsLogin>
-
+        <SpaceBetweenInputs />
+        <Button disabled={checkIfExistVoidValues}>
+          {continueText}
+        </Button>
       </form>
 
     </ContainerWithLogo>
-
   )
 }

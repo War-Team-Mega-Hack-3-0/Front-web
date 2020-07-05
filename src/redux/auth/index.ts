@@ -18,6 +18,12 @@ const initialState: IAuthState = {
 }
 
 const actionMap = {
+  [AuthTypes.SIGN_UP_REQUEST]: (state: IAuthState, action: IAuthActions) => ({
+    ...state,
+    isLogging: true,
+    hasError: false,
+    errorMsg: ''
+  }),
   [AuthTypes.LOGIN_REQUEST]: (state: IAuthState, action: IAuthActions) => ({
     ...state,
     isLogging: true,
