@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 import { Card } from '../../../../styles'
 
@@ -10,10 +10,11 @@ export const Overview: React.FC = () => {
   function timer(time = 10000) {
     return new Promise((resolve) => setInterval(resolve, time))
   }
+  const optimizedCountOrders = useCallback(countOrders, [])
   useEffect(() => {
-    countOrders(30000)
-    countOrders(350, setTotalReceived)
-  }, [])
+    optimizedCountOrders(30000)
+    optimizedCountOrders(350, setTotalReceived)
+  }, [optimizedCountOrders])
   async function countOrders(value: number, set = setTotalOrders) {
     for (let i = value * 0.98; i <= value; i++) {
       set(i)
