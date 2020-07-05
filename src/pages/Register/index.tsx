@@ -2,7 +2,7 @@ import React from 'react'
 
 import { AuthActions } from '../../redux/auth/actions'
 
-import { UseFormController } from '../../customHooks'
+import { useFormController } from '../../customHooks'
 
 import {
   yourFullName,
@@ -27,7 +27,7 @@ export const Register: React.FC = () => {
     handleChangeForm,
     handleSubmit,
     checkIfExistVoidValues
-  } = UseFormController(
+  } = useFormController(
     initialState,
     AuthActions.signUp
   )

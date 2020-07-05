@@ -1,5 +1,7 @@
 import { css, createGlobalStyle } from 'styled-components'
 
+import { palletColors } from '../common/colors'
+
 const reset = css`
 * {
   box-sizing: border-box;
@@ -13,7 +15,7 @@ const reset = css`
 }
 
 body {   
-  background-color: #151725;
+  background-color: ${palletColors.backGroundBlue};
   color: #FFF;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { LogoSvg } from '../../assets/images'
+import { LogoSvg } from '../../../assets/images'
 
 import { Container, ContainerLogo, Logo, Title, ContainerContent } from './styles'
 
