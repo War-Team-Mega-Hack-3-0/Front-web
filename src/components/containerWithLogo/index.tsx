@@ -2,7 +2,7 @@ import React from 'react'
 
 import { LogoSvg } from '../../assets/images'
 
-import { Container, ContainerLogo, Logo, Title } from './styles'
+import { Container, ContainerLogo, Logo, Title, ContainerContent } from './styles'
 
 interface IProps {
   title: string
@@ -11,15 +11,17 @@ interface IProps {
 export const ContainerWithLogo: React.FC<IProps> = ({ title, children }) => {
   return (
     <Container>
-      <ContainerLogo>
-        <Logo src={LogoSvg} alt="Logo da decision" title="Logo da decision" />
-      </ContainerLogo>
+      <ContainerContent>
 
-      <Title dangerouslySetInnerHTML={{ __html: title }} />
+        <ContainerLogo>
+          <Logo src={LogoSvg} alt="Logo da decision" title="Logo da decision" />
+        </ContainerLogo>
 
-      {children}
+        <Title dangerouslySetInnerHTML={{ __html: title }} />
+
+        {children}
+      </ContainerContent>
 
     </Container >
-
   )
 }
