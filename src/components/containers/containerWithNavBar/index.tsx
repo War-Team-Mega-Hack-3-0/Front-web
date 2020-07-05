@@ -1,7 +1,21 @@
 import React from 'react'
 
-// import { Container } from './styles';
+import { useFixMenuOnScroll } from '../../../customHooks/useFixMenu'
 
-export const ContainerWithNavBar: React.FC = () => {
-  return <div />
+import { Navbar } from './navbar'
+
+import { Container, Content } from './styles'
+
+export const ContainerWithNavBar: React.FC = ({ children }) => {
+  const { isSticky, mainElement } = useFixMenuOnScroll()
+  return (
+    <Container ref={mainElement}>
+      <Navbar fixed={isSticky} />
+
+      <Content fixed={isSticky}>
+        {children}
+      </Content>
+
+    </Container>
+  )
 }

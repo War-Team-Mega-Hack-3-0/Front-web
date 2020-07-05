@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import { palletColors } from '../../../../common/colors'
 
-interface IMenuHeaderFixed {
+export interface IMenuHeaderFixed {
   fixed: boolean
 }
 
