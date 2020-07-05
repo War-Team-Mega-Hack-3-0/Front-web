@@ -11,7 +11,7 @@ export const Overview: React.FC = () => {
     return new Promise((resolve) => setInterval(resolve, time))
   }
   useEffect(() => {
-    countOrders(3000)
+    countOrders(30000)
     countOrders(350, setTotalReceived)
   }, [])
   async function countOrders(value: number, set = setTotalOrders) {

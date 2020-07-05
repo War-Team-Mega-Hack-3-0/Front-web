@@ -5,7 +5,8 @@ import {
   Salutation,
   InsideUser,
   FinancialGoalStatus,
-  Overview
+  Overview,
+  FinancialIncome
 } from './homeComponents'
 
 import {
@@ -17,16 +18,17 @@ export const Home: React.FC = () => {
     <ContainerWithNavBar>
       {/* fazer funcao para saber qual parte do dia é em salutation */}
       <Salutation />
-
-      <InsideUser/>
+      <InsideUser />
 
       {/* Valores mocados */}
-      <FinancialGoalStatus/>
+      <FinancialGoalStatus />
       <SpaceCards />
 
       {/* Valores mocados */}
       <Overview />
       <SpaceCards />
+
+      <FinancialIncome />
 
     </ContainerWithNavBar>
   )
