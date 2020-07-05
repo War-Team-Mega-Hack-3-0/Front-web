@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux'
 
 import { AuthActions } from '../../redux/auth/actions'
 
-import { LogoSvg } from '../../assets/images'
 import {
   loginText,
   EmailText,
@@ -14,13 +13,9 @@ import {
   RegisterText
 } from '../../common/strings'
 
-import { Input, InputPassword } from '../../components'
+import { ContainerWithLogo, Input, InputPassword } from '../../components'
 
 import {
-  Container,
-  ContainerLogo,
-  Logo,
-  Title,
   SpaceBetweenInputs,
   SpaceAfterInputs,
   ContainerOptionsLogin,
@@ -50,12 +45,7 @@ export const Login: React.FC = () => {
   }
 
   return (
-    <Container>
-      <ContainerLogo>
-        <Logo src={LogoSvg} alt="Logo da decision" title="Logo da decision" />
-      </ContainerLogo>
-
-      <Title>{loginText}</Title>
+    <ContainerWithLogo title={loginText}>
 
       <form onSubmit={handleSubmit}>
 
@@ -102,6 +92,7 @@ export const Login: React.FC = () => {
 
       </form>
 
-    </Container >
+    </ContainerWithLogo>
+
   )
 }
