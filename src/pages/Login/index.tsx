@@ -1,8 +1,10 @@
-import React, { useState, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { AuthActions } from '../../redux/auth/actions'
+
+import { UseFormController } from '../../customHooks'
 
 import {
   loginText,
@@ -19,9 +21,9 @@ import {
   InputPassword,
   Button
 } from '../../components'
+import { SpaceBetweenInputs } from '../../styles'
 
 import {
-  SpaceBetweenInputs,
   SpaceAfterInputs,
   ContainerOptionsLogin,
   ContainerButton,
@@ -31,16 +33,14 @@ import {
 export const Login: React.FC = () => {
   const dispatch = useDispatch()
 
-  const [formData, setFormData] = useState({ email: '', password: '' })
+  const {
+    formData,
+    handleChangeForm
+  } = UseFormController({ email: '', password: '' })
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
     dispatch(AuthActions.loginRequest(formData))
-  }
-
-  function handleChangeForm(event: React.ChangeEvent<HTMLInputElement>) {
-    const { value, name } = event.target
-    setFormData({ ...formData, [name]: value })
   }
 
   const checkIfEnableButton = useCallback(enableSubmitLogin, [formData])()
