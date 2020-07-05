@@ -16,7 +16,9 @@ export const Home: React.FC = () => {
   return (
     <ContainerScreen ref={mainElement}>
       <NavBar fixed={isSticky}>
-        <img src={icEllipsis} alt="" />
+        <button style={{ backgroundColor: 'transparent' }}>
+          <img src={icEllipsis} alt="" />
+        </button>
 
         <img src={icInitialLetterLogo} alt="" />
       </NavBar>
