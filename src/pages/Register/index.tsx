@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+import { AuthActions } from '../../redux/auth/actions'
 
 import { UseFormController } from '../../customHooks'
 
@@ -27,7 +29,7 @@ export const Register: React.FC = () => {
     checkIfExistVoidValues
   } = UseFormController(
     initialState,
-    () => { }
+    AuthActions.signUp
   )
 
   return (

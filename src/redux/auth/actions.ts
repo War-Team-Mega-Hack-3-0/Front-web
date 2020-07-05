@@ -1,11 +1,23 @@
 import { AuthTypes, IAuthState } from './types'
 
-interface ILoginRequestParams {
+export interface ILoginRequestParams {
+  email: string
+  password: string
+}
+
+export interface ISignUpParams {
+  fullName: string
   email: string
   password: string
 }
 
 export const AuthActions = {
+  signUp(data: ISignUpParams) {
+    return {
+      type: AuthTypes.SIGN_UP_REQUEST,
+      payload: data
+    }
+  },
   loginRequest(data: ILoginRequestParams) {
     return {
       type: AuthTypes.LOGIN_REQUEST,
