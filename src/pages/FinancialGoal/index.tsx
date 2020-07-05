@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { UseFormController } from '../../customHooks'
+import { useFormController } from '../../customHooks'
 
 import {
   continueText,
@@ -27,7 +27,7 @@ export const FinancialGoal: React.FC = () => {
     handleChangeForm,
     handleSubmit,
     checkIfExistVoidValues
-  } = UseFormController(
+  } = useFormController(
     initialState,
     () => { }
   )

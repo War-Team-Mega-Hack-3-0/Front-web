@@ -1,7 +1,7 @@
 import { useState, useCallback, FormEvent } from 'react'
 import { useDispatch } from 'react-redux'
 
-export function UseFormController<T>(
+export function useFormController<T>(
   initialState: T,
   actionRequest: (data: T) => void
 ) {

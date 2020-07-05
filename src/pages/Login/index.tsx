@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { AuthActions } from '../../redux/auth/actions'
 
-import { UseFormController } from '../../customHooks'
+import { useFormController } from '../../customHooks'
 
 import {
   loginText,
@@ -36,7 +36,7 @@ export const Login: React.FC = () => {
     handleChangeForm,
     handleSubmit,
     checkIfExistVoidValues
-  } = UseFormController(
+  } = useFormController(
     initialState,
     AuthActions.loginRequest
   )
