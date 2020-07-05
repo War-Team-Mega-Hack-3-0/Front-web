@@ -9,7 +9,6 @@ margin: 0.5rem 0 0;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 gap: 1rem;
-
 ${Card} {
   display: flex;
   flex-direction: column;
@@ -23,3 +22,7 @@ font-weight: bolder;`
 export const ValueCard = styled.span`
 font-size: 2rem;
 font-weight: bolder;`
+
+export const IndicatorCard = styled.span`
+align-self: flex-end;
+`

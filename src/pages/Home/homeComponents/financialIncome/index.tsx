@@ -8,7 +8,8 @@ import {
   Container,
   ContainerCards,
   MonetaryReference,
-  ValueCard
+  ValueCard,
+  IndicatorCard
 } from './styles'
 
 export const FinancialIncome: React.FC = () => (
@@ -20,27 +21,27 @@ export const FinancialIncome: React.FC = () => (
         <MonetaryReference>R$</MonetaryReference>
         <ValueCard>300</ValueCard>
         hoje<br />
-        <span style={{ alignSelf: 'flex-end' }}>
+        <IndicatorCard>
           <img src={icArrowUp} alt="" />
-        </span>
+        </IndicatorCard>
       </Card>
 
       <Card clear>
         <MonetaryReference>R$</MonetaryReference>
         <ValueCard>200</ValueCard>
         Na Semana<br />
-        <span style={{ alignSelf: 'flex-end' }}>
+        <IndicatorCard>
           <img src={icArrowDown} alt="" />
-        </span>
+        </IndicatorCard>
       </Card>
 
       <Card clear>
         <MonetaryReference>R$</MonetaryReference>
         <ValueCard>10k</ValueCard>
         No Mês<br />
-        <span style={{ alignSelf: 'flex-end' }}>
+        <IndicatorCard>
           <img src={icArrowUp} alt="" />
-        </span>
+        </IndicatorCard>
       </Card>
 
     </ContainerCards>

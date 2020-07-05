@@ -6,7 +6,8 @@ import {
   InsideUser,
   FinancialGoalStatus,
   Overview,
-  FinancialIncome
+  FinancialIncome,
+  RentsByPlatform
 } from './homeComponents'
 
 import {
@@ -28,7 +29,11 @@ export const Home: React.FC = () => {
       <Overview />
       <SpaceCards />
 
+      {/* Valores mocados */}
       <FinancialIncome />
+      <SpaceCards />
+
+      <RentsByPlatform />
 
     </ContainerWithNavBar>
   )
