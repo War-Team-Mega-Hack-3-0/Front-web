@@ -5,14 +5,15 @@ import { InsideText } from '../../common/strings'
 import { icLamp } from '../../assets/images'
 
 import { ContainerWithNavBar, ProgressBar } from '../../components'
-import { Salutation } from './salutation'
+import { Salutation, Overview } from './homeComponents'
 
 import {
   InsideContainer,
   ButtonLamp,
   TextBolder,
   FinancialGoalStatus,
-  TextsFinancialGoalStatus
+  TextsFinancialGoalStatus,
+  SpaceCards
 } from './styles'
 
 export const Home: React.FC = () => {
@@ -21,6 +22,7 @@ export const Home: React.FC = () => {
       {/* fazer funcao para saber qual parte do dia é em salutation */}
       <Salutation />
 
+      {/* Componentizar */}
       <InsideContainer>
         <h3>{InsideText}</h3>
         <ButtonLamp to="/cuelim">
@@ -32,16 +34,19 @@ export const Home: React.FC = () => {
         </ButtonLamp>
       </InsideContainer>
 
+      {/* Componentizar */}
       <FinancialGoalStatus>
-
         <TextsFinancialGoalStatus>
           <span>Sua meta mensal</span>
           <TextBolder>R$ 15.000</TextBolder>
         </TextsFinancialGoalStatus>
-
-        <ProgressBar percent={75} />
-
+        <ProgressBar percent={70} />
       </FinancialGoalStatus>
+
+      {/* Valores mocados */}
+      <SpaceCards />
+
+      <Overview />
 
     </ContainerWithNavBar>
   )

@@ -19,6 +19,7 @@ export const MyNavBar = styled.header`
 background-color: ${palletColors.backGroundBlue};
 display: flex;
 justify-content: space-between;
+/* flex-direction: row-reverse; - usar isso na responsividade */
 
 ${({ fixed }: IMenuHeaderFixed) => fixed ? fixedMenu : ''}
 
