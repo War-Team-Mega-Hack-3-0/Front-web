@@ -5,14 +5,11 @@ import { InsideText } from '../../common/strings'
 import { icLamp } from '../../assets/images'
 
 import { ContainerWithNavBar, ProgressBar } from '../../components'
-import { Salutation, Overview } from './homeComponents'
+import { Salutation, FinancialGoalStatus, Overview } from './homeComponents'
 
 import {
   InsideContainer,
   ButtonLamp,
-  TextBolder,
-  FinancialGoalStatus,
-  TextsFinancialGoalStatus,
   SpaceCards
 } from './styles'
 
@@ -34,18 +31,12 @@ export const Home: React.FC = () => {
         </ButtonLamp>
       </InsideContainer>
 
-      {/* Componentizar */}
-      <FinancialGoalStatus>
-        <TextsFinancialGoalStatus>
-          <span>Sua meta mensal</span>
-          <TextBolder>R$ 15.000</TextBolder>
-        </TextsFinancialGoalStatus>
-        <ProgressBar percent={70} />
-      </FinancialGoalStatus>
-
       {/* Valores mocados */}
+      <FinancialGoalStatus/>
+
       <SpaceCards />
 
+      {/* Valores mocados */}
       <Overview />
 
     </ContainerWithNavBar>

@@ -18,18 +18,6 @@ position: relative;
   outline: dotted;
   border: 2px solid;
 }`
-// component
-
-// component
-export const FinancialGoalStatus = styled.div`
-margin: 1.6rem 0 0;
-overflow: hidden;`
-export const TextsFinancialGoalStatus = styled.div`
-font-size: 0.9rem;
-display: flex;
-justify-content: space-between;
-margin: 0 0 .5rem;`
-// component
 
 // space
 export const SpaceCards = styled.div`
