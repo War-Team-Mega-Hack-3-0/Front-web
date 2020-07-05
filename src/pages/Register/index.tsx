@@ -19,24 +19,30 @@ import {
 import { SpaceBetweenInputs } from '../../styles'
 
 export const Register: React.FC = () => {
-  const { formData, handleChangeForm } = UseFormController({
-    fullName: '',
-    email: '',
-    password: ''
-  })
+  const initialState = { fullName: '', email: '', password: '' }
+  const {
+    formData,
+    handleChangeForm,
+    handleSubmit,
+    checkIfExistVoidValues
+  } = UseFormController(
+    initialState,
+    () => { }
+  )
 
   return (
     <ContainerWithLogo title={TextRegister}>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <Input
           placeholder={yourFullName}
           value={formData.fullName}
           onChange={handleChangeForm}
-          name="email"
-          id="email"
+          name="fullName"
+          id="fullName"
           minLength={5}
           maxLength={100}
           title="Digite seu seu nome completo"
+          required
         />
 
         <SpaceBetweenInputs />
@@ -47,9 +53,11 @@ export const Register: React.FC = () => {
           onChange={handleChangeForm}
           name="email"
           id="email"
+          type="email"
           minLength={5}
           maxLength={100}
           title="Digite seu email"
+          required
         />
 
         <SpaceBetweenInputs />
@@ -66,7 +74,7 @@ export const Register: React.FC = () => {
         />
 
         <SpaceBetweenInputs />
-        <Button>
+        <Button disabled={checkIfExistVoidValues}>
           {continueText}
         </Button>
       </form>

@@ -40,6 +40,7 @@ export const InputPassword: React.FC<IProps> = ({
         minLength={minLength}
         maxLength={maxLength}
         title={title}
+        required
       />
 
       <TransparentButton type="button" onClick={hideUnhiddenPassword}>

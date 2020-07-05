@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 
 import { AuthActions } from '../../redux/auth/actions'
 
@@ -31,22 +30,16 @@ import {
 } from './styles'
 
 export const Login: React.FC = () => {
-  const dispatch = useDispatch()
-
+  const initialState = { email: '', password: '' }
   const {
     formData,
-    handleChangeForm
-  } = UseFormController({ email: '', password: '' })
-
-  function handleSubmit(event: React.FormEvent) {
-    event.preventDefault()
-    dispatch(AuthActions.loginRequest(formData))
-  }
-
-  const checkIfEnableButton = useCallback(enableSubmitLogin, [formData])()
-  function enableSubmitLogin() {
-    return !(formData.email && formData.password)
-  }
+    handleChangeForm,
+    handleSubmit,
+    checkIfExistVoidValues
+  } = UseFormController(
+    initialState,
+    AuthActions.loginRequest
+  )
 
   return (
     <ContainerWithLogo title={loginText}>
@@ -59,6 +52,7 @@ export const Login: React.FC = () => {
           onChange={handleChangeForm}
           name="email"
           id="email"
+          type="email"
           minLength={5}
           maxLength={100}
           title="Digite seu email"
@@ -84,13 +78,13 @@ export const Login: React.FC = () => {
         </ContainerOptionsLogin>
 
         <ContainerButton>
-          <Button disabled={checkIfEnableButton}>{loginText}</Button>
+          <Button disabled={checkIfExistVoidValues}>{loginText}</Button>
         </ContainerButton>
 
         <ContainerOptionsLogin>
           <TextCenter>
             <p>{dontHaveAnAccountYetText}</p>
-            <Link to="/register">{RegisterText}</Link>
+            <Link to="/sign-up">{RegisterText}</Link>
           </TextCenter>
         </ContainerOptionsLogin>
 
