@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { AuthActions } from '../../redux/auth/actions'
 
-import { LogoSvg, icClosedEyes, icOpenedEyes } from '../../assets/images'
+import { LogoSvg } from '../../assets/images'
 import {
   loginText,
   EmailText,
@@ -14,41 +14,25 @@ import {
   RegisterText
 } from '../../common/strings'
 
+import { Input, InputPassword } from '../../components'
+
 import {
   Container,
   ContainerLogo,
   Logo,
   Title,
-  Input,
-  ContainerToAddIconInInput,
   SpaceBetweenInputs,
   SpaceAfterInputs,
   ContainerOptionsLogin,
   ContainerButton,
   Button,
-  TextCenter,
-  TransparentButton
+  TextCenter
 } from './styles'
-
-interface ITypeAndIconInputPassword {
-  type: 'text' | 'password'
-  icon: string | any
-}
-interface IChangeTypeInput {
-  text: ITypeAndIconInputPassword
-  password: ITypeAndIconInputPassword
-}
 
 export const Login: React.FC = () => {
   const dispatch = useDispatch()
 
-  const changeTypeInput: IChangeTypeInput = {
-    text: { type: 'password', icon: icClosedEyes },
-    password: { type: 'text', icon: icOpenedEyes }
-  }
-
   const [formData, setFormData] = useState({ email: '', password: '' })
-  const [typeInputPassword, setTypeInputPassword] = useState<ITypeAndIconInputPassword>(changeTypeInput.text)
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
@@ -63,12 +47,6 @@ export const Login: React.FC = () => {
   const checkIfEnableButton = useCallback(enableSubmitLogin, [formData])()
   function enableSubmitLogin() {
     return !(formData.email && formData.password)
-  }
-
-  function hideUnhiddenPassword(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    event.preventDefault()
-    const changedValues = changeTypeInput[typeInputPassword.type]
-    setTypeInputPassword(changedValues)
   }
 
   return (
@@ -94,28 +72,16 @@ export const Login: React.FC = () => {
 
         <SpaceBetweenInputs />
 
-        <ContainerToAddIconInInput>
-          <Input
-            placeholder={passwordText}
-            value={formData.password}
-            onChange={handleChangeForm}
-            type={typeInputPassword.type}
-            name="password"
-            id="password"
-            minLength={5}
-            maxLength={20}
-            title="Digite sua senha"
-          />
-
-          <TransparentButton onClick={hideUnhiddenPassword}>
-            <img
-              src={typeInputPassword.icon}
-              alt="icone de olho aberto ou fechado"
-              title="icone de olho aberto ou fechado"
-            />
-          </TransparentButton>
-
-        </ContainerToAddIconInInput>
+        <InputPassword
+          placeholder={passwordText}
+          value={formData.password}
+          onChange={handleChangeForm}
+          name="password"
+          id="password"
+          minLength={5}
+          maxLength={20}
+          title="Digite sua senha"
+        />
 
         <SpaceAfterInputs />
 

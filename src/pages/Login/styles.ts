@@ -19,39 +19,6 @@ font-weight: 500;
 letter-spacing: 0.2px;
 margin: 0 0 2.1rem 0`
 
-// exportar isso daqui
-export const Input = styled.input`
-border: 2px solid transparent;
-border-radius: 0.5rem;
-font-weight: 500;
-padding: 1rem;
-width: 100%;
-&:focus {
-  outline: none;
-  border: 2px solid ${palletColors.blueGreen}
-}
-&::placeholder {
-  color: #A2A6AF;
-  opacity: 1;
-}`
-
-export const ContainerToAddIconInInput = styled.div`
-border: 2px solid transparent; 
-align-content: center;
-align-items: center;
-background-color: #FFF;
-border-radius: 0.5rem;
-display: flex;
-padding-right: 1rem;
-input {
-  &:focus {
-    border: 2px solid transparent; 
-  }
-}
-&:focus-within {
-  border: 2px solid ${palletColors.blueGreen}
-}`
-
 export const SpaceBetweenInputs = styled.div`
 margin-top: 1rem;`
 
@@ -89,7 +56,3 @@ a {
   color: ${palletColors.blueGreen};
   text-decoration: none;
 }`
-
-export const TransparentButton = styled.button`
-background-color: transparent;
-`
