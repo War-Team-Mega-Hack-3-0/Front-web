@@ -10,8 +10,8 @@ interface IAuthSagasParams {
 }
 export function * AuthSagas({ payload }: IAuthSagasParams) {
   try {
-    const { data, meta } = (yield call(authRequest, payload)) as IAuthRequest
-    const relevantData = filterRelevantData({ data, meta }) as IAuthState
+    const { data } = (yield call(authRequest, payload)) as { data: IAuthRequest }
+    const relevantData = filterRelevantData(data) as IAuthState
     yield put(AuthActions.loginSuccess(relevantData))
   } catch (err) {
     yield put(AuthActions.loginFailure(err))
@@ -34,7 +34,6 @@ export function * SignUpSagas({ payload }: ISignUpSagasParams) {
 
 function filterRelevantData({ data, meta }: IAuthRequest) {
   const { _id, email, integrations, createdAt, updatedAt } = data
-  console.log(meta)
   return {
     authToken: meta.token,
     user: {
