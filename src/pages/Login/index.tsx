@@ -13,14 +13,18 @@ import {
   RegisterText
 } from '../../common/strings'
 
-import { ContainerWithLogo, Input, InputPassword } from '../../components'
+import {
+  ContainerWithLogo,
+  Input,
+  InputPassword,
+  Button
+} from '../../components'
 
 import {
   SpaceBetweenInputs,
   SpaceAfterInputs,
   ContainerOptionsLogin,
   ContainerButton,
-  Button,
   TextCenter
 } from './styles'
 
