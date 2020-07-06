@@ -3,8 +3,7 @@ import { informationTypes } from '../types'
 export const retrieveInformationActions = {
   request() {
     return {
-      type: informationTypes.RETRIEVE_INFORMATION_REQUEST,
-      payload: 'alo'
+      type: informationTypes.RETRIEVE_INFORMATION_REQUEST
     }
   },
 

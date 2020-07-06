@@ -16,10 +16,10 @@ export const Routes: React.FC = () => (
     <Switch>
       <RouteWrapper path="/login" exact component={Login} />
       <RouteWrapper path="/sign-up" exact component={Register} />
-      <RouteWrapper path="/financial-goal" exact component={FinancialGoal} />
-      <RouteWrapper path="/" exact isPrivate component={Home} />
-      <RouteWrapper path="/vtex-integration" exact isPrivate component={VtexIntegration} />
-      <RouteWrapper path="/tips" exact isPrivate component={BusinessTips} />
+      <RouteWrapper isPrivate path="/" exact component={Home} />
+      <RouteWrapper isPrivate path="/financial-goal" exact component={FinancialGoal} />
+      <RouteWrapper isPrivate path="/vtex-integration" exact component={VtexIntegration} />
+      <RouteWrapper isPrivate path="/tips" exact component={BusinessTips} />
     </Switch>
   </HashRouter>
 )

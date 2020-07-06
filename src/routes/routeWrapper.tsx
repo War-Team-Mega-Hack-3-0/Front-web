@@ -3,6 +3,7 @@ import { Route, Redirect, RouteProps } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { authState } from '../redux/auth/selectors'
+import { setToken } from '../services/api'
 
 interface IProps extends RouteProps {
   component: React.ComponentType
@@ -20,10 +21,10 @@ export const RouteWrapper: React.FC<IProps> = ({
     return <Redirect to="/login" />
   }
 
-  // if (signed && !isPrivate) {
-  //   return <Redirect to="/" />
-  // }
-
+  if (signed && !isPrivate) {
+    return <Redirect to="/" />
+  }
+  setToken(signed)
   return <Route {...rest} component={Component} />
 }
 

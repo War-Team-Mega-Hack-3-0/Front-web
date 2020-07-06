@@ -1,6 +1,8 @@
 import { AxiosResponse } from 'axios'
 
 import { ILoginRequestParams, ISignUpParams } from '../../redux/auth/actions'
+// import { } from '../../redux/information'
+
 import { api } from './index'
 
 const baseUrl = '/profile'
@@ -25,3 +27,6 @@ export const authRequest = (data: ILoginRequestParams): Promise<AxiosResponse<IA
 
 export const signUpRequest = (data: ISignUpParams): Promise<AxiosResponse<IAuthRequest>> =>
   api.post(`${baseUrl}/signup`, data)
+
+export const DashBoard = (): Promise<AxiosResponse<IAuthRequest>> =>
+  api.post(`${baseUrl}/dashboard`)
