@@ -20,6 +20,7 @@ export const ContainerWithLogo: React.FC<IProps> = ({ title, children }) => {
         <Title dangerouslySetInnerHTML={{ __html: title }} />
 
         {children}
+
       </ContainerContent>
 
     </Container >

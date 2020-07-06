@@ -1,33 +1,16 @@
 import styled, { css } from 'styled-components'
 
-const ContainerFlex = css`
-display: flex; 
-flex-direction: column;
-align-items: center;
-width: 100%;`
-
 export const Container = styled.main`
 padding: 1rem;
-/* @media screen and (max-width:600px){
-  ${ContainerFlex}
-} */
-/* 
-@media screen and (max-width:768px){
-  ${ContainerFlex}
+@media (min-width:600px) and (max-width: 800px){
+  padding: 1rem 10%;
 }
-@media screen and (max-width:900px){
-  ${ContainerFlex}
+@media (min-width:800px) and (max-width: 1400px){
+  padding: 1rem 25%;
 }
-@media screen and (max-width:1024px){
-  ${ContainerFlex}
-}
-@media screen and (max-width:1200px){
-  ${ContainerFlex}
-}
-@media screen and (max-width:1600px){
-  ${ContainerFlex}
-} */
-`
+@media (min-width:1400px) and (max-width: 2600px){
+  padding: 1rem 35%;
+}`
 
 export const ContainerLogo = styled.div`
 display: flex;
@@ -43,23 +26,4 @@ font-weight: 500;
 letter-spacing: 0.2px;
 margin: 0 0 2.1rem 0`
 
-export const ContainerContent = styled.div`
-/* @media screen and (max-width:600px){
-  width: 80%;
-}
-@media screen and (max-width:768px){
-  width: 80%;
-}
-@media screen and (max-width:900px){
-  width: 80%;
-}
-@media screen and (max-width:1024px){
-  width: 55%;
-}
-@media screen and (max-width:1200px){
-  width: 55%;
-}
-@media screen and (max-width:1600px){
-  width: 45%;
-} */
-`
+export const ContainerContent = styled.div``
