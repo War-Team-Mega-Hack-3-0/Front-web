@@ -1,7 +1,9 @@
 import React from 'react'
+import { Doughnut, Bar } from 'react-chartjs-2'
+
+import { SpaceCards } from '../../styles'
 
 import { Card } from '../../../../styles'
-import { Doughnut, Bar } from 'react-chartjs-2'
 
 const doughnutData = {
   labels: [
@@ -56,8 +58,7 @@ export const RentsByPlatform: React.FC = () => {
           }}
         />
       </Card>
-
-      <div style={{ marginTop: '2rem' }} />
+      <SpaceCards />
 
       <Card>
         <Bar
@@ -70,8 +71,7 @@ export const RentsByPlatform: React.FC = () => {
         />
       </Card>
 
-      <div style={{ marginTop: '2rem' }} />
-
+      <SpaceCards />
       <Card>
         <Bar
           data={dataMouths}
