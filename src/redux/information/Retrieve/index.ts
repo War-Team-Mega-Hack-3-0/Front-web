@@ -3,7 +3,9 @@ import { informationTypes, IInformationState, IInformationActions } from '../typ
 export type IInformationStateT = IInformationState
 
 const initialState: IInformationState = {
-  data: [],
+  doughnutData: { data: [] },
+  dataHours: { labels: [], data: [] },
+  dataMonths: { labels: [], data: [] },
   isLoading: false,
   hasDone: false,
   hasError: false,
