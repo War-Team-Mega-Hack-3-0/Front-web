@@ -23,8 +23,14 @@ objetivos.`
 // home screen
 export const InsideText = 'Descubra mais para alcançar sua meta'
 
+// integration Vtex screen
+export const titleIntegrationVtex = 'Integre com<br/> sua conta VTEX'
+export const nameAccountVtex = 'Nome da conta'
+export const nameStoreVtex = 'Nome sua loja'
+
 // generics
 export const TextRegister = 'Cadastro'
 export const EmailText = 'E-mail'
 export const passwordText = 'Senha'
 export const continueText = 'Continuar'
+export const tokenText = 'Token'
