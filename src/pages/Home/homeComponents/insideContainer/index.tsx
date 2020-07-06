@@ -8,7 +8,7 @@ import { InsideContainer, ButtonLamp } from './styles'
 export const InsideUser: React.FC = () => (
   <InsideContainer>
     <h3>{InsideText}</h3>
-    <ButtonLamp to="/insides">
+    <ButtonLamp to="/tips">
       <img
         src={icLamp}
         alt="uma lampada branca em um quadrado de cor azul"

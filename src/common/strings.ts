@@ -28,6 +28,14 @@ export const titleIntegrationVtex = 'Integre com<br/> sua conta VTEX'
 export const nameAccountVtex = 'Nome da conta'
 export const nameStoreVtex = 'Nome sua loja'
 
+// business tips
+export const titleBusinessTips = 'Dicas'
+export const describeBusinessTips = `
+Entenda mais sobre o mundo dos negócios.<br />
+A Decision selecionou para você uma série<br />
+de artigos que podem te auxíliar na sua tomada de decisão.
+`
+
 // generics
 export const TextRegister = 'Cadastro'
 export const EmailText = 'E-mail'
