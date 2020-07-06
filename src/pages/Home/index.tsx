@@ -11,7 +11,9 @@ import {
 } from './homeComponents'
 
 import {
-  SpaceCards
+  SpaceCards,
+  SpaceFinancialCard,
+  ContainerCharts
 } from './styles'
 
 export const Home: React.FC = () => {
@@ -23,18 +25,21 @@ export const Home: React.FC = () => {
 
       {/* Valores mocados */}
       <FinancialGoalStatus />
-      <SpaceCards />
+      <SpaceFinancialCard />
 
-      {/* Valores mocados */}
-      <Overview />
-      <SpaceCards />
+      <ContainerCharts>
 
-      {/* Valores mocados */}
-      <FinancialIncome />
-      <SpaceCards />
+        {/* Valores mocados */}
+        <Overview />
+        <SpaceCards />
 
-      <RentsByPlatform />
+        {/* Valores mocados */}
+        <FinancialIncome />
+        <SpaceCards />
 
+        <RentsByPlatform />
+
+      </ContainerCharts>
     </ContainerWithNavBar>
   )
 }
