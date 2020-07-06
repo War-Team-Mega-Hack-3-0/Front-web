@@ -20,7 +20,10 @@ background-color: ${palletColors.backGroundBlue};
 display: flex;
 justify-content: space-between;
 z-index: 10000;
-/* flex-direction: row-reverse; - usar isso na responsividade */
+
+@media (min-width: 800px) and (max-width: 2600px) {
+  flex-direction: row-reverse;
+}
 
 ${({ fixed }: IMenuHeaderFixed) => fixed ? fixedMenu : ''}
 
